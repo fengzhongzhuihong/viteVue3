@@ -1,6 +1,6 @@
 <template>
   <h1>{{ msg }}</h1>
-  <button @click="changeName()">count is: {{ count }}  {{userName}}</button>
+  <button @click="changeName()">count is: {{ count }}  {{userName}}</button><button @click="changeName2()">count is: {{ count }}  {{userName}}</button>
   <p>Edit <code>components/HelloWorld.vue</code> to test hot module replacement.</p>
 </template>
 
@@ -32,8 +32,10 @@ export default {
     console.log(count)
     const store=useStore()
     const a=reactive({state:'132'})
+   const changeName2=function () {
+      console.log(this)
+      store.commit('changeName')
+    }
     const userName=computed(()=>store.state.userName)
-    return {userName,...toRef(a)}
-  }
-}
+    return {userName,...toRef(a),changeName2}}}
 </script>
