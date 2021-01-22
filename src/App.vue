@@ -25,12 +25,11 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import SidebarItem from './components/SidebarItem.vue'
-import sideBar from './components/sidebar/index.vue'
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    SidebarItem,sideBar
+    SidebarItem,
   },
   setup(){
 
