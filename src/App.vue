@@ -13,12 +13,10 @@
         >
           <sidebar-item></sidebar-item>
         </el-menu>
-<!--        <side-bar class="sidebar" />-->
       </el-aside>
       <el-main>  <router-view></router-view></el-main>
     </el-container>
   </el-container>
-<!--  <HelloWorld msg="Hello Vue 3.0 + Vite" />-->
 
 </template>
 

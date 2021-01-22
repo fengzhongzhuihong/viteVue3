@@ -1,6 +1,6 @@
 <template>
   <h1>{{ msg }}</h1>
-  <button @click="changeName()">count is: {{ count }}  {{userName}}</button><button @click="changeName2()">count is: {{ count }}  {{userName}}</button>
+  <button @click="changeName()">count is: {{ count }}  {{userName}}</button>
   <p>Edit <code>components/HelloWorld.vue</code> to test hot module replacement.</p>
 </template>
 
@@ -15,27 +15,15 @@ export default {
   props: {
     msg: String
   },
-  data() {
-    return {
-      count: 0,
-    }
-  },
-  methods:{
-    changeName:function () {
-      console.log(this)
-      this.$store.commit('changeName')
-      console.log(this.$store.state.userName)
-    }
-  },
   setup(){
-    const count = ref(0);
-    console.log(count)
+    const count = ref(0)
     const store=useStore()
     const a=reactive({state:'132'})
-   const changeName2=function () {
+     const changeName= ()=> {
       console.log(this)
+       count.value++
       store.commit('changeName')
     }
     const userName=computed(()=>store.state.userName)
-    return {userName,...toRef(a),changeName2}}}
+    return {userName,...toRef(a),changeName,count}}}
 </script>
