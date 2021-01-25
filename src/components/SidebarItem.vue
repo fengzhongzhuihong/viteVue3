@@ -5,19 +5,27 @@
     <!-- 循环router,获取第一层item -->
     <template v-for="item in this.$router.options.routes">
       <el-submenu :index="item.path" :key="item.path">
-        <template slot="title">
+        <template #title>
+          <i class="el-icon-location"></i>
           <span>{{ item.name }}</span>
         </template>
+
         <!-- 循环第二层children获取第三层child -->
         <template v-for="child in item.children">
+
           <!-- 判断是否存在第三层，如果存在则显示 -->
           <div
             v-if="child.children != null && child.children.length > 0"
             :key="child.path"
           >
+            <el-menu-item-group :index="child.path" :key="child.path">
+            <template #title>分组一</template>
+            <el-menu-item index="1-1">{{ child.name }}</el-menu-item>
+<!--            <el-menu-item index="1-2">选项2</el-menu-item>-->
+          </el-menu-item-group>
             <!-- 展示第三层 -->
-            <el-submenu :index="child.path" :key="child.path">
-              <template slot="title">{{ child.name }}</template>
+            <el-submenu>
+              <template slot="title"></template>
               <template v-for="child1 in child.children">
                 <router-link
                   v-if="

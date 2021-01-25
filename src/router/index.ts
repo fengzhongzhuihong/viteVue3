@@ -3,7 +3,7 @@ import HelloWorld from "../components/HelloWorld.vue";
 import Home from "../components/Home.vue";
 
 export const routes= [
-    { path: '/',name:'首页',component: Home },
+    { path: '/',name:'首页',component: Home, },
     { path: '/foo',name:'测试' , component: HelloWorld },
     { path: '/fo2o',name:'测试2' , component: HelloWorld },
   ]
