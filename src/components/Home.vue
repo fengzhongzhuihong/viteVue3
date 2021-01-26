@@ -1,14 +1,17 @@
 <template>
   <router-link to="/foo">Go to Foo</router-link>
-  <div @click="jump">
+  <div @click="jump('foo')">
     跳转到foo
   </div>
-  <div>
-    <p>数字为：{{num}}</p>
-    <p>两倍为：{{double}}</p>
-   <span> {{all}}</span>
-    <button @click="sum()">累加</button>
+  <div @click="jump('echart')">
+    跳转到echart
   </div>
+<!--  <div>-->
+<!--    <p>数字为：{{num}}</p>-->
+<!--    <p>两倍为：{{double}}</p>-->
+<!--   <span> {{all}}</span>-->
+<!--    <button @click="sum()">累加</button>-->
+<!--  </div>-->
   <el-button icon="el-icon-search" circle></el-button>
   <el-button type="primary" icon="el-icon-edit" circle></el-button>
   <el-button type="success" icon="el-icon-check" circle></el-button>
@@ -31,12 +34,12 @@ export default {
     }
   },
   methods:{
-jump:function () {
-  this.$router.push('/foo')
-  this.$router.push({ name: 'user', params: { userId }}) // -> /user/123
-  this.$router.push({ path: `/user/${userId}` }) // -> /user/123
-// 这里的 params 不生效
-  this.$router.push({ path: '/user', params: { userId }}) // -> /user
+jump:function (path) {
+  this.$router.push(path||'/foo')
+//   this.$router.push({ name: 'user', params: { userId }}) // -> /user/123
+//   this.$router.push({ path: `/user/${userId}` }) // -> /user/123
+// // 这里的 params 不生效
+//   this.$router.push({ path: '/user', params: { userId }}) // -> /user
 }
   },
   setup(){
