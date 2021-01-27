@@ -33,6 +33,14 @@ export default {
       count: 0,
     }
   },
+  beforeRouteLeave (to, from, next) {
+    const answer = window.confirm('你想离开此页吗?您还没有保存数据!')
+    if (answer) {
+      next()
+    } else {
+      next(false)
+    }
+  },
   methods:{
 jump:function (path) {
   this.$router.push(path||'/foo')

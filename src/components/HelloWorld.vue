@@ -6,8 +6,7 @@
 
 <script>
 import {computed} from "vue";
-import {useStore} from "vuex";
-import {reactive, ref, toRef} from "@vue/reactivity";
+import {useStore} from "vuex"; import {reactive, ref, toRef} from "@vue/reactivity";
 
 
 export default {
@@ -19,7 +18,7 @@ export default {
     const count = ref(0)
     const store=useStore()
     const a=reactive({state:'132'})
-     const changeName= ()=> {
+    const changeName= ()=> {
       console.log(this)
        count.value++
       store.commit('changeName')

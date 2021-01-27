@@ -3,15 +3,6 @@
     <el-header>Header</el-header>
     <el-container>
       <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
-        <el-menu
-          mode="vertical"
-          unique-opened
-          router
-          :collapse="false"
-          :default-active="this.$route.path"
-        >
-          <sidebar-item></sidebar-item>
-        </el-menu>
       </el-aside>
       <el-main>  <router-view></router-view></el-main>
     </el-container>
@@ -21,12 +12,10 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import SidebarItem from './components/SidebarItem.vue'
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    SidebarItem,
   },
   setup(){
 

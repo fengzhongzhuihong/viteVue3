@@ -10,10 +10,15 @@ export const routes= [
     { path: '/echart',name:'echart' , component: echart },
   ]
 // 在 Vue-router新版本中，需要使用createRouter来创建路由
-export default createRouter({
+export const router=  createRouter({
   // 指定路由的模式,此处使用的是hash模式
   history: createWebHashHistory(),
   // 路由地址c
   routes
-});
+})
 
+router.beforeEach((to, from, next) => {
+  console.log(to)
+  next()
+  // ...
+})
